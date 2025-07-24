@@ -16,3 +16,42 @@
 .div-text-field {
     margin: .5rem;
 }
+
+.div-row{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.div-col{
+   flex: 1;
+}
+
+.div-response{
+    margin: .5rem;
+    border: 2px solid #4a90e2;
+    width: 95%;
+    height: 37rem;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.select-method {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 16px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  color: #4a90e2;
+  appearance: none; /* elimina estilo nativo en algunos navegadores */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select-method:focus {
+  border-bottom-color: #4a90e2;
+  outline: none;
+}
