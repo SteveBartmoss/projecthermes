@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './home.css'
 import viteLogo from '/vite.svg'
+import { Btn } from '../components/btn/btn'
 
 export function Home() {
 
@@ -34,6 +35,8 @@ export function Home() {
         
     }
 
+    //<button onClick={handleSend}>Send</button>
+
     return (
         <>
             <div className='div-row'>
@@ -59,7 +62,7 @@ export function Home() {
                     <input className='text-field' type='text' placeholder='url' value={url} onChange={(event)=>setUrl(event.target.value)}/>
                 </div>
                 <div className='div-col'>
-                    <button onClick={handleSend}>Send</button>
+                    <Btn title={'Send'} handle={handleSend} />
                 </div>
                 <div>
                     <p>status:{status}</p>
