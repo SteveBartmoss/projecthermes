@@ -9,7 +9,7 @@
 }
 
 .text-field:focus {
-    border-bottom-color: #4a90e2;
+    border-bottom-color: #646cff;
     outline: none;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .text-area:focus{
-    border-bottom-color: #4a90e2;
+    border-bottom-color: #646cff;
     outline: none;
 }
 
@@ -52,7 +52,7 @@
 
 .div-response{
     margin: .5rem;
-    border: 2px solid #4a90e2;
+    border: 2px solid #646cff;
     width: 70%;
     height: 37rem;
     overflow-y: scroll;
@@ -67,13 +67,13 @@
   font-size: 16px;
   background-color: transparent;
   transition: all 0.3s ease;
-  color: #4a90e2;
+  color: #646cff;
   appearance: none; /* elimina estilo nativo en algunos navegadores */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
 .select-method:focus {
-  border-bottom-color: #4a90e2;
+  border-bottom-color: #646cff;
   outline: none;
 }
