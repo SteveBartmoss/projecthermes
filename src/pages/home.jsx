@@ -5,28 +5,29 @@ import viteLogo from '/vite.svg'
 export function Home() {
 
     const [url,setUrl] = useState('')
+    const [body,setBody] = useState('')
     const [method, setMethod]=useState('GET')
     const [response,setResponse] = useState('')
+    const [status,setStatus] = useState('')
 
     const handleSend = async()=>{
 
         const options = {
-            method: method, // viene de tu select: GET, POST, etc.
+            method: method,
             headers: {
                 'Content-Type': 'application/json',
             },
         }
 
-        // Si es GET o DELETE, no envíes body
         if (method !== 'GET' && method !== 'DELETE') {
-            options.body = JSON.stringify({ nombre: 'Ejemplo', valor: 123 });
+            options.body = JSON.stringify(JSON.parse(body));
         }
 
          try {
             const res = await fetch(url, options);
             const data = await res.json();
             setResponse(data);
-            console.log(response)
+            setStatus(res.status)
         } catch (err) {
             console.error('Error en la petición:', err);
         }
@@ -60,10 +61,18 @@ export function Home() {
                 <div className='div-col'>
                     <button onClick={handleSend}>Send</button>
                 </div>
+                <div>
+                    <p>status:{status}</p>
+                </div>
             </div>
-            
-            <div className='div-response'>
-                <pre>{JSON.stringify(response, null, 2)}</pre>
+
+            <div className='div-row'>
+                <div className='div-body'>
+                        <textarea className='text-area' placeholder='body' value={body} onChange={(event)=>setBody(event.target.value)} ></textarea>
+                </div>
+                <div className='div-response'>
+                        <pre>{JSON.stringify(response, null, 2)}</pre>
+                </div>
             </div>
             
             <p>
