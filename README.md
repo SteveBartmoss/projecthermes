@@ -1,3 +1,8 @@
+# Cliente http ligero
+
+Si necesitas una forma de probar una api y tienes configurada un ambiente de desarrollo con node.js 
+puedes clonar el repositorio  para tener una aplicacion para consumir apis mediante peticiones http
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
