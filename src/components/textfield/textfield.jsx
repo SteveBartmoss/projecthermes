@@ -1,7 +1,7 @@
 
 
-export function TextField(){
+export function TextField({textHolder,target,handleTarget}){
     return(
-        <input type="text"  className='text-field' />
+        <input type="text"  className='text-field' placeholder={textHolder} value={target} onChange={handleTarget} />
     )
 }
