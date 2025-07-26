@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './home.css'
 import viteLogo from '/vite.svg'
 import { Btn } from '../components/btn/btn'
+import { TextField } from '../components/textfield/textfield'
 
 export function Home() {
 
@@ -36,6 +37,7 @@ export function Home() {
     }
 
     //<button onClick={handleSend}>Send</button>
+    //<input className='text-field' type='text' placeholder='url' value={url} onChange={(event)=>setUrl(event.target.value)}/>
 
     return (
         <>
@@ -59,7 +61,7 @@ export function Home() {
                     </select>
                 </div>
                 <div className='div-col'>
-                    <input className='text-field' type='text' placeholder='url' value={url} onChange={(event)=>setUrl(event.target.value)}/>
+                    <TextField textHolder={'url'} target={url} handleTarget={(event)=>setUrl(event.target.value)} />
                 </div>
                 <div className='div-col'>
                     <Btn title={'Send'} handle={handleSend} />
