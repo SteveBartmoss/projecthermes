@@ -3,15 +3,30 @@
 Si necesitas una forma de probar una api y tienes configurada un ambiente de desarrollo con node.js 
 puedes clonar el repositorio  para tener una aplicacion para consumir apis mediante peticiones http
 
-# React + Vite
+### Consideraciones
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Como el proyecto se levanta en su propio puerto (quizas es mucho para un cliente http) pero sobre todo 
+porque las peticiones se realizan por js, la api detectara un problema de cors por lo que puedes habilitar 
+cors para el desarrollo y luego deshabilitarlo
 
-Currently, two official plugins are available:
+### Pasos para levantar el proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clonar el repositorio
 
-## Expanding the ESLint configuration
+2. ejecutar el comando para instalar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+3. Correr la aplicacion 
+
+```bash
+npm install
+```
+
+4. vitar el siguiente enlace en un navegador
+
+```bash
+http://localhost:5173/
+```
