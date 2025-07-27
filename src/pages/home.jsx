@@ -11,6 +11,8 @@ export function Home() {
     const [method, setMethod]=useState('GET')
     const [response,setResponse] = useState('')
     const [status,setStatus] = useState('')
+    const [duration,setDuration] = useState(0)
+    const [size,setSize] = useState(0)
 
     const handleSend = async()=>{
 
@@ -26,8 +28,15 @@ export function Home() {
         }
 
          try {
+            const start = performance.now();
             const res = await fetch(url, options);
+            const end = performance.now();
+            setDuration(end-start)
             const data = await res.json();
+            //const cloneRes = data.clone();
+            //const text = await cloneRes.text()
+            //setSize(new TextEncoder().encode(text).length) 
+
             setResponse(data);
             setStatus(res.status)
         } catch (err) {
@@ -68,6 +77,12 @@ export function Home() {
                 </div>
                 <div>
                     <p>status:{status}</p>
+                </div>
+                <div>
+                    <p>Time:{duration}</p>
+                </div>
+                <div>
+                    <p>Size:{size}</p>
                 </div>
             </div>
 
