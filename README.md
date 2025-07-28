@@ -7,7 +7,7 @@ puedes clonar el repositorio  para tener una aplicacion para consumir apis media
 
 Como el proyecto se levanta en su propio puerto (quizas es mucho para un cliente http) pero sobre todo 
 porque las peticiones se realizan por js, la api detectara un problema de cors por lo que puedes habilitar 
-cors para el desarrollo y luego deshabilitarlo
+cors para el desarrollo y luego deshabilitarlo si tu api no require tener cors activo
 
 ### Pasos para levantar el proyecto
 
