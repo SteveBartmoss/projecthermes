@@ -25,7 +25,7 @@ npm install
 npm install
 ```
 
-4. vitar el siguiente enlace en un navegador
+4. visitar el siguiente enlace en un navegador
 
 ```bash
 http://localhost:5173/
