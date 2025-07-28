@@ -45,9 +45,6 @@ export function Home() {
         
     }
 
-    //<button onClick={handleSend}>Send</button>
-    //<input className='text-field' type='text' placeholder='url' value={url} onChange={(event)=>setUrl(event.target.value)}/>
-
     return (
         <>
             <div className='div-row'>
