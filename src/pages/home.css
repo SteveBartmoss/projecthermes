@@ -36,7 +36,7 @@
 
 .div-row{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     padding: 0.5rem;
 }
