@@ -34,9 +34,8 @@ export function Home() {
             const end = performance.now();
             setDuration(end-start)
             const data = await res.json();
-            //const cloneRes = data.clone();
-            //const text = await cloneRes.text()
-            //setSize(new TextEncoder().encode(text).length) 
+            const text = JSON.stringify(data)
+            setSize(new TextEncoder().encode(text).length) 
 
             setResponse(data);
             setStatus(res.status)
@@ -45,12 +44,6 @@ export function Home() {
         }
         
     }
-
-    /*
-     <div className='div-response'>
-                        <pre>{JSON.stringify(response, null, 2)}</pre>
-                </div>
-    */
 
     return (
         <>
