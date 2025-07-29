@@ -3,6 +3,7 @@ import './home.css'
 import viteLogo from '/vite.svg'
 import { Btn } from '../components/btn/btn'
 import { TextField } from '../components/textfield/textfield'
+import { ResponseField } from '../components/response/responseField'
 
 export function Home() {
 
@@ -45,6 +46,12 @@ export function Home() {
         
     }
 
+    /*
+     <div className='div-response'>
+                        <pre>{JSON.stringify(response, null, 2)}</pre>
+                </div>
+    */
+
     return (
         <>
             <div className='div-row'>
@@ -52,7 +59,7 @@ export function Home() {
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                 </div>
                 <div>
-                    <h1>Lucy</h1>
+                    <h1>Light client</h1>
                 </div>
             </div>
 
@@ -72,24 +79,13 @@ export function Home() {
                 <div className='div-col'>
                     <Btn title={'Send'} handle={handleSend} />
                 </div>
-                <div>
-                    <p>status:{status}</p>
-                </div>
-                <div>
-                    <p>Time:{duration}</p>
-                </div>
-                <div>
-                    <p>Size:{size}</p>
-                </div>
             </div>
 
             <div className='div-row'>
                 <div className='div-body'>
                         <textarea className='text-area' placeholder='body' value={body} onChange={(event)=>setBody(event.target.value)} ></textarea>
                 </div>
-                <div className='div-response'>
-                        <pre>{JSON.stringify(response, null, 2)}</pre>
-                </div>
+                <ResponseField objResponse={response} size={size} time={duration} status={status} />
             </div>
             
             <p>
