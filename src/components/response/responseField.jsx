@@ -12,7 +12,7 @@ export function ResponseField({objResponse,size,time,status}){
                         <p>time: {time}</p>
                     </div>
                     <div>
-                        <p>size: {size}</p>
+                        <p>size: {size} B</p>
                     </div>
                 </div>
                 <div className='div-response'>
