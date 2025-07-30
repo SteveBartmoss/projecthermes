@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { Btn } from '../components/btn/btn'
 import { TextField } from '../components/textfield/textfield'
 import { ResponseField } from '../components/response/responseField'
+import { Client } from '../client/client'
 
 export function Home() {
 
@@ -29,6 +30,12 @@ export function Home() {
         }
 
          try {
+            const {data,duration,size,status } = await Client.sendPeticion(method,body,url)
+            setDuration(duration)
+            setResponse(data)
+            setStatus(status)
+            setSize(size)
+            /*
             const start = performance.now();
             const res = await fetch(url, options);
             const end = performance.now();
@@ -39,6 +46,7 @@ export function Home() {
 
             setResponse(data);
             setStatus(res.status)
+            */
         } catch (err) {
             console.error('Error en la petición:', err);
         }
