@@ -5,7 +5,7 @@ export function SelectField({elements,target,handleChange}){
         <select className='select-method' value={target} onChange={handleChange}>
             {
                 elements.map(item => 
-                    <option value={item.value}>{item.title}</option>
+                    <option key={item.value} value={item.value}>{item.title}</option>
                 )
             }
         </select>
