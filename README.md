@@ -22,7 +22,7 @@ npm install
 3. Correr la aplicacion 
 
 ```bash
-npm install
+npm run dev
 ```
 
 4. visitar el siguiente enlace en un navegador
