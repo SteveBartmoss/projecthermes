@@ -1,6 +1,6 @@
 import './selectField.css'
 
-export function Select({elements,target,handleChange}){
+export function SelectField({elements,target,handleChange}){
     return(
         <select className='select-method' value={target} onChange={handleChange}>
             {
