@@ -5,6 +5,7 @@ import { Btn } from '../components/btn/btn'
 import { TextField } from '../components/textfield/textfield'
 import { ResponseField } from '../components/response/responseField'
 import { Client } from '../client/client'
+import { SelectField } from '../components/select/selectField'
 
 export function Home() {
 
@@ -15,6 +16,29 @@ export function Home() {
     const [status,setStatus] = useState('')
     const [duration,setDuration] = useState(0)
     const [size,setSize] = useState(0)
+
+    const methodElements = [
+        {
+            value: "GET",
+            title: "GET"
+        },
+        {
+            value: "POST",
+            title: "POST"
+        },
+        {
+            value: "PUT", 
+            title: "PUT"
+        },
+        {
+            value: "PATCH",
+            title: "PATCH"
+        },
+        {
+            value: "DELETE",
+            title: "DELETE"
+        }
+    ]
 
     const handleSend = async()=>{
 
@@ -47,6 +71,17 @@ export function Home() {
             setResponse(data);
             setStatus(res.status)
             */
+
+            /*
+             <select className='select-method' id="metodo" value={method} onChange={(event)=>setMethod(event.target.value)}>
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+            */
+
         } catch (err) {
             console.error('Error en la petición:', err);
         }
@@ -66,13 +101,7 @@ export function Home() {
 
             <div className='div-row'>
                 <div>
-                     <select className='select-method' id="metodo" value={method} onChange={(event)=>setMethod(event.target.value)}>
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option>
-                        <option value="PUT">PUT</option>
-                        <option value="PATCH">PATCH</option>
-                        <option value="DELETE">DELETE</option>
-                    </select>
+                    <SelectField elements={methodElements} target={method} handleChange={(event)=>setMethod(event.target.value)} />
                 </div>
                 <div className='div-col'>
                     <TextField textHolder={'url'} target={url} handleTarget={(event)=>setUrl(event.target.value)} />
