@@ -73,12 +73,6 @@ export function Home() {
             setStatus(res.status)
             */
 
-            /*
-            <div className='div-body'>
-                <textarea className='text-area' placeholder='body' value={body} onChange={(event)=>setBody(event.target.value)} ></textarea>
-            </div>
-            */
-
         } catch (err) {
             console.error('Error en la petición:', err);
         }
