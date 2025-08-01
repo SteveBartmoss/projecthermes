@@ -6,6 +6,7 @@ import { TextField } from '../components/textfield/textfield'
 import { ResponseField } from '../components/response/responseField'
 import { Client } from '../client/client'
 import { SelectField } from '../components/select/selectField'
+import { LongTextField } from '../components/longTextField/longTextField'
 
 export function Home() {
 
@@ -73,13 +74,9 @@ export function Home() {
             */
 
             /*
-             <select className='select-method' id="metodo" value={method} onChange={(event)=>setMethod(event.target.value)}>
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option>
-                        <option value="PUT">PUT</option>
-                        <option value="PATCH">PATCH</option>
-                        <option value="DELETE">DELETE</option>
-                    </select>
+            <div className='div-body'>
+                <textarea className='text-area' placeholder='body' value={body} onChange={(event)=>setBody(event.target.value)} ></textarea>
+            </div>
             */
 
         } catch (err) {
@@ -92,10 +89,10 @@ export function Home() {
         <>
             <div className='div-row'>
                 <div>
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
+                    <img src={viteLogo} alt="Vite logo" />
                 </div>
                 <div>
-                    <h1>Light client</h1>
+                    <h1 className='title'>Light client</h1>
                 </div>
             </div>
 
@@ -113,7 +110,7 @@ export function Home() {
 
             <div className='div-row'>
                 <div className='div-body'>
-                        <textarea className='text-area' placeholder='body' value={body} onChange={(event)=>setBody(event.target.value)} ></textarea>
+                    <LongTextField textHolder={'body'} target={body} handleTarget={(event)=>setBody(event.target.value)} />
                 </div>
                 <ResponseField objResponse={response} size={size} time={duration} status={status} />
             </div>
