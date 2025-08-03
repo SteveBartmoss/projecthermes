@@ -7,6 +7,7 @@ import { ResponseField } from '../components/response/responseField'
 import { Client } from '../client/client'
 import { SelectField } from '../components/select/selectField'
 import { LongTextField } from '../components/longTextField/longTextField'
+import { TokenMenu } from '../components/tokenMenu/tokenMenu'
 
 export function Home() {
 
@@ -14,6 +15,7 @@ export function Home() {
     const [body,setBody] = useState('')
     const [method, setMethod]=useState('GET')
     const [objProps, setObjProps]=useState({})
+    const [token,setToken]=useState('')
 
     const methodElements = [
         {
@@ -40,18 +42,7 @@ export function Home() {
 
     const handleSend = async()=>{
 
-        const options = {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }
-
-        if (method !== 'GET' && method !== 'DELETE') {
-            options.body = JSON.stringify(JSON.parse(body));
-        }
-
-         try {
+        try {
             const {data,duration,size,status } = await Client.sendPeticion(method,body,url)
             setObjProps({
                 objResponse: data,
@@ -59,19 +50,6 @@ export function Home() {
                 status: status,
                 size: size
             })
-
-            /*
-            const start = performance.now();
-            const res = await fetch(url, options);
-            const end = performance.now();
-            setDuration(end-start)
-            const data = await res.json();
-            const text = JSON.stringify(data)
-            setSize(new TextEncoder().encode(text).length) 
-
-            setResponse(data);
-            setStatus(res.status)
-            */
 
         } catch (err) {
             console.error('Error en la petición:', err);
@@ -97,9 +75,13 @@ export function Home() {
                 <div className='div-col'>
                     <TextField textHolder={'url'} target={url} handleTarget={(event)=>setUrl(event.target.value)} />
                 </div>
-                <div className='div-col'>
+                <div>
                     <Btn title={'Send'} handle={handleSend} />
                 </div>
+            </div>
+             
+            <div className='div-row'>
+                <TokenMenu title={'Authorization'} target={token} handleTarget={(event)=>setToken(event.target.value)} />
             </div>
 
             <div className='div-row'>
