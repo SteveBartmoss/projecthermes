@@ -30,3 +30,14 @@ npm run dev
 ```bash
 http://localhost:5173/
 ```
+
+
+##  Pruebas 
+
+```js
+{
+"title": "foo",
+"body": "bar",
+"userId": 1,
+}
+``
