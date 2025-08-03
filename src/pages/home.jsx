@@ -13,10 +13,7 @@ export function Home() {
     const [url,setUrl] = useState('')
     const [body,setBody] = useState('')
     const [method, setMethod]=useState('GET')
-    const [response,setResponse] = useState('')
-    const [status,setStatus] = useState('')
-    const [duration,setDuration] = useState(0)
-    const [size,setSize] = useState(0)
+    const [objProps, setObjProps]=useState({})
 
     const methodElements = [
         {
@@ -56,10 +53,13 @@ export function Home() {
 
          try {
             const {data,duration,size,status } = await Client.sendPeticion(method,body,url)
-            setDuration(duration)
-            setResponse(data)
-            setStatus(status)
-            setSize(size)
+            setObjProps({
+                objResponse: data,
+                time: duration,
+                status: status,
+                size: size
+            })
+
             /*
             const start = performance.now();
             const res = await fetch(url, options);
@@ -106,7 +106,7 @@ export function Home() {
                 <div className='div-body'>
                     <LongTextField textHolder={'body'} target={body} handleTarget={(event)=>setBody(event.target.value)} />
                 </div>
-                <ResponseField objResponse={response} size={size} time={duration} status={status} />
+                <ResponseField objProps={objProps} />
             </div>
             
             <p>
