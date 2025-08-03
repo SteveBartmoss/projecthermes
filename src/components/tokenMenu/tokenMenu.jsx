@@ -14,10 +14,11 @@ export function TokenMenu({title,target,handleTarget}){
     }
 
     return(
-        <div className='display-menu' onMouseEnter={handleOpen}>
+        <div className='display-menu' onClick={handleOpen}>
+
             <div>{title}</div>
             <div onMouseLeave={handeClose} className={open ? 'display-menu-div' : 'display-menu-none'}>
-                <input type="text" className='text-field' value={target} onChange={handleTarget} />
+                <label>Token</label> <input type="text" className='text-field' value={target} onChange={handleTarget} />
             </div>
         </div>
     )
