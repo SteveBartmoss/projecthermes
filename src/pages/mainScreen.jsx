@@ -1,11 +1,19 @@
+import { DivCol, DivRow } from '../components/containers/containers'
+import viteLogo from '/vite.svg'
 
-
-export function MainScreen(){
-    return(
+export function MainScreen() {
+    return (
         <>
-            <div>
-                <h1>Main frame</h1>
-            </div>
+            <DivCol>
+                <DivRow>
+                    <div>
+                        <img src={viteLogo} alt="Vite logo" />
+                    </div>
+                    <div>
+                        <h1 className='title'>Light client</h1>
+                    </div>
+                </DivRow>
+            </DivCol>
         </>
     )
 }
