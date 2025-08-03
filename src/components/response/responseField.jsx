@@ -1,22 +1,22 @@
 import './responseField.css'
 
-export function ResponseField({objResponse,size,time,status}){
+export function ResponseField({objProps}){
     return(
         <>
             <div className='div-container'>
                 <div className='div-status-bar'>
                     <div>
-                        <p>status: {status}</p>
+                        <p>status: {objProps.status}</p>
                     </div>
                     <div>
-                        <p>time: {time}</p>
+                        <p>time: {objProps.time}</p>
                     </div>
                     <div>
-                        <p>size: {size} B</p>
+                        <p>size: {objProps.size} B</p>
                     </div>
                 </div>
                 <div className='div-response'>
-                    <pre>{JSON.stringify(objResponse, null, 2)}</pre>
+                    <pre>{JSON.stringify(objProps.objResponse, null, 2)}</pre>
                 </div>
             </div>
         </>
