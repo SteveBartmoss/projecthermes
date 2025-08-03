@@ -1,5 +1,5 @@
 export class Client{
-    static async sendPeticion(method,body,url){
+    static async sendPeticion(method,body,url,token=''){
 
         let result = {}
 
@@ -7,6 +7,7 @@ export class Client{
             method: method,
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
         }
 
