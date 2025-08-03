@@ -1,4 +1,4 @@
-
+import './textfield.css'
 
 export function TextField({textHolder,target,handleTarget}){
     return(
