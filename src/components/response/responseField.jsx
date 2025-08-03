@@ -1,6 +1,16 @@
 import './responseField.css'
 
 export function ResponseField({objProps}){
+
+    const handleClipBoard = async () =>{
+        try{
+
+            await navigator.clipboard.writeText(JSON.stringify(objProps.objResponse))
+
+        }catch(error){
+            console.log(error)
+        }
+    }
     return(
         <>
             <div className='div-container'>
@@ -13,6 +23,10 @@ export function ResponseField({objProps}){
                     </div>
                     <div>
                         <p>size: {objProps.size} B</p>
+                    </div>
+                    
+                    <div>
+                        <p onClick={handleClipBoard}>Copiar</p>
                     </div>
                 </div>
                 <div className='div-response'>
