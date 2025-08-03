@@ -1,6 +1,6 @@
 import './containers.css'
 
-export function DivRow({chjldren}){
+export function DivRow({children}){
     return(
         <div className="div-row">
             {children}
@@ -11,6 +11,14 @@ export function DivRow({chjldren}){
 export function DivCol({children}){
     return(
         <div className="div-column">
+            {children}
+        </div>
+    )
+}
+
+export function DivGrow({children}){
+    return(
+        <div className='div-grow'>
             {children}
         </div>
     )
