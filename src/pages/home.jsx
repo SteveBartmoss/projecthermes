@@ -43,7 +43,7 @@ export function Home() {
     const handleSend = async()=>{
 
         try {
-            const {data,duration,size,status } = await Client.sendPeticion(method,body,url)
+            const {data,duration,size,status } = await Client.sendPeticion(method,body,url,token)
             setObjProps({
                 objResponse: data,
                 time: duration,
