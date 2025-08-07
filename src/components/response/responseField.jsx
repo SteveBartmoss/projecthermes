@@ -1,4 +1,5 @@
 import './responseField.css'
+import copy from '/copy.png'
 
 export function ResponseField({objProps}){
 
@@ -24,9 +25,8 @@ export function ResponseField({objProps}){
                     <div>
                         <p>size: {objProps.size} B</p>
                     </div>
-                    
                     <div>
-                        <p onClick={handleClipBoard}>Copiar</p>
+                        <img onClick={handleClipBoard} src={copy} alt='copy' />
                     </div>
                 </div>
                 <div className='div-response'>
