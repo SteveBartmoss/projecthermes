@@ -23,3 +23,13 @@
     color: #646cff;
     border-bottom: solid #646cff;
 }
+
+.div-tabs{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-close{
+    width: 1.3rem;
+    height: 1.3rem;
+}
