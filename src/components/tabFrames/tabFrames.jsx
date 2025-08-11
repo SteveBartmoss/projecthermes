@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import addImg from '/add.png'
+import close from '/close.png'
 
 import './tabFrames.css'
 import { HttpFrame } from "../../frames/httpFrame"
 import { useDispatch, useSelector } from "react-redux"
-import { addTab } from "../../store/tabSlice"
+import { addTab, removeTab } from "../../store/tabSlice"
 
 export function TabFrames(){
 
@@ -24,6 +25,10 @@ export function TabFrames(){
         }))
     }
 
+    const handleRemoveTab=(id)=>{
+        dispach(removeTab(id))
+    }
+
     useEffect(() => {
         setCurrentTab(listFrames[0].id)
     }, [ ])
@@ -33,8 +38,9 @@ export function TabFrames(){
             <div className="container-head">
                 {
                     listFrames.map(element => 
-                        <div key={element.id}>
+                        <div className="div-tabs" key={element.id}>
                             <p className={currentTab === element.id ? 'tab tab-actibe' : 'tab'} onClick={()=>handleChangeTab(element)}>{element.title}</p>
+                            <img onClick={()=>handleRemoveTab(element.id)} className="img-close" src={close} alt="close" />
                         </div>
                     )
                 }
