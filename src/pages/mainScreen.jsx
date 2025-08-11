@@ -4,23 +4,9 @@ import { TabFrames } from '../components/tabFrames/tabFrames'
 import viteLogo from '/vite.svg'
 import { HttpFrame } from '../frames/httpFrame'
 import { Btn } from '../components/btn/btn'
+import { useSelector } from 'react-redux'
 
 export function MainScreen() {
-
-    const [count,setCount] = useState(1)
-    const [frames,setFrames] = useState([
-        {
-            id: count,
-            title: `http${count}`,
-            content: <HttpFrame />
-        }
-    ])
-
-    const handleAddTab=()=>{
-        const newCount = count+1
-        setCount(newCount)
-        setFrames([...frames,{id: newCount, title: `http${newCount}`, content: <HttpFrame /> }])
-    }
 
     return (
         <>
@@ -32,13 +18,10 @@ export function MainScreen() {
                     <div>
                         <h1 className='title'>Light client</h1>
                     </div>
-                    <div>
-                        <Btn title={'new tab'} handle={handleAddTab} />
-                    </div>
                 </DivRow>
                 <DivRow>
                     <DivGrow>
-                        <TabFrames elements={frames} />
+                        <TabFrames />
                     </DivGrow>
                 </DivRow>
                 <DivRow>
