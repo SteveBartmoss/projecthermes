@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import './tabFrames.css'
+import { HttpFrame } from "../../frames/httpFrame"
 
 export function TabFrames({elements}){
 
@@ -31,7 +32,7 @@ export function TabFrames({elements}){
                 {
                     elements.map(element =>
                         <div key={element.id} className={currentTab === element.id ? '' : 'tab-close'}>
-                            {element.content}
+                            <HttpFrame />
                         </div>
                     )
                 }
