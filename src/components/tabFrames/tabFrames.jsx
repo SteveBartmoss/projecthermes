@@ -6,7 +6,7 @@ import { HttpFrame } from "../../frames/httpFrame"
 import { useDispatch, useSelector } from "react-redux"
 import { addTab } from "../../store/tabSlice"
 
-export function TabFrames({elements}){
+export function TabFrames(){
 
     const listFrames = useSelector(state => state.tabs)
     const dispach = useDispatch()
