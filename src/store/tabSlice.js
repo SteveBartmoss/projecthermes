@@ -3,7 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const tabSlice = createSlice({
     name: 'tabSlice',
     initialState: {
-        value: [],
+        value: [
+            {
+                id: 1,
+                title: 'Htttp',
+            },
+        ],
     },
     reducers: {
         addTab: (state,action) => {
