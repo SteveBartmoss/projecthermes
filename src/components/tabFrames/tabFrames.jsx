@@ -51,8 +51,8 @@ export function TabFrames(){
                         </div>
                     )
                 }
-                <div>
-                    <img onClick={handleAddTab} className="tab" src={addImg} alt="add" />
+                <div className="div-btn-icon">
+                    <img onClick={handleAddTab} src={addImg} alt="add" />
                 </div>
             </div>
             <div>
