@@ -25,7 +25,7 @@ export function ResponseField({objProps}){
                     <div>
                         <p>size: {objProps.size} B</p>
                     </div>
-                    <div>
+                    <div className='div-btn-icon'>
                         <img onClick={handleClipBoard} src={copy} alt='copy' />
                     </div>
                 </div>
