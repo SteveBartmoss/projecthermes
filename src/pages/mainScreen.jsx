@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import { HttpFrame } from '../frames/httpFrame'
 import { Btn } from '../components/btn/btn'
 import { useSelector } from 'react-redux'
+import './mainScreen.css'
 
 export function MainScreen() {
 
