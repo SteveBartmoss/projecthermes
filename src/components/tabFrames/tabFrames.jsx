@@ -18,6 +18,13 @@ export function TabFrames(){
     }
 
     const handleAddTab=()=>{
+        if(listFrames.length<=0){
+            dispach(addTab({
+                id: 1,
+                title: `http${1}`
+            }))
+            return
+        }
         let counter = listFrames[listFrames.length-1].id
         dispach(addTab({
             id: counter+1,
