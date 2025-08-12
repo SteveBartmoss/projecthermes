@@ -1,10 +1,6 @@
-import { useState } from 'react'
 import { DivCol, DivGrow, DivRow } from '../components/containers/containers'
 import { TabFrames } from '../components/tabFrames/tabFrames'
 import viteLogo from '/vite.svg'
-import { HttpFrame } from '../frames/httpFrame'
-import { Btn } from '../components/btn/btn'
-import { useSelector } from 'react-redux'
 import './mainScreen.css'
 
 export function MainScreen() {
