@@ -1,0 +1,30 @@
+.container-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-close {
+    display: none;
+}
+
+.tab {
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.tab:hover {
+    color: #646cff;
+}
+
+.tab-actibe {
+    color: #646cff;
+    border-bottom: solid #646cff;
+}
+
+.div-tabs{
+    display: flex;
+    flex-direction: row;
+}
