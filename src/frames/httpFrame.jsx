@@ -14,6 +14,7 @@ export function HttpFrame(){
     const [url,setUrl] = useState('')
     const [body,setBody] = useState('')
     const [method, setMethod] = useState('GET')
+    const [typeBody,setTypeBody] = useState('body')
     const [objProps, setObjProps] = useState({})
     const [token,setToken] = useState('')
     
@@ -38,6 +39,17 @@ export function HttpFrame(){
             value: "DELETE",
             title: "DELETE"
         }
+    ]
+
+    const bodyContent = [
+        {
+            value: "body",
+            title: "Body",
+        },
+        {
+            value: "formData",
+            title: "Form Data",
+        },
     ]
 
     const handleSend = async() => {
