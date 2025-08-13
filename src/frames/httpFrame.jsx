@@ -8,6 +8,8 @@ import './httpFrame.css'
 import { LongTextField } from "../components/longTextField/longTextField";
 import { ResponseField } from "../components/response/responseField";
 import { TokenMenu } from "../components/tokenMenu/tokenMenu";
+import { Params } from "../components/params/params";
+import { TabsRequest } from "../components/tabsRequest/tabsRequest";
 
 export function HttpFrame(){
 
@@ -16,6 +18,7 @@ export function HttpFrame(){
     const [method, setMethod] = useState('GET')
     const [typeBody,setTypeBody] = useState('body')
     const [objProps, setObjProps] = useState({})
+    const [typeToken,setTypeToken] = useState('')
     const [token,setToken] = useState('')
     
     const methodElements = [
@@ -52,6 +55,34 @@ export function HttpFrame(){
         },
     ]
 
+    const elementsToken = [
+        {
+            value: "Bearer Token",
+            title: "bearerToken",
+        },
+    ]
+
+    const elementsRequest = [
+        {
+            id: 1,
+            title: 'Params',
+            content: <Params />,
+        },
+        {
+            id: 2,
+            title: 'Authorization',
+            content: <div>
+                <SelectField elements={elementsToken} target={typeToken} handleChange={(event)=>setTypeToken(event.target.value)} />
+                <TextField textHolder={'token'} target={token} handleTarget={(event)=>setToken(event.target.value)}  />
+            </div>,
+        },
+        {
+            id: 3,
+            title: 'Body',
+            content: <h1>Body</h1>,
+        }
+    ]
+
     const handleSend = async() => {
         try{
             const {data,duration,size,status} = await Client.sendPeticion(method,body,url,token)
@@ -83,6 +114,10 @@ export function HttpFrame(){
 
             <DivRow>
                 <TokenMenu title={'Authorization'} target={token} handleTarget={(event)=>setToken(event.target.value)} />
+            </DivRow>
+
+            <DivRow>
+                <TabsRequest elements={elementsRequest} />
             </DivRow>
             <DivRow>
                 <div className='div-body'>
