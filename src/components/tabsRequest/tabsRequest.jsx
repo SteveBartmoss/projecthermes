@@ -1,38 +1,32 @@
+import './tabsRequest.css'
 
+export function TabsRequest({elements}){
 
-export function TabsRequest(){
+    const [currentTab,setCurrentTab] = useState(1)
 
-    const elements = [
-        {
-            id: 1,
-            title: 'Params',
-            content: 'Params',
-        },
-        {
-            id: 2,
-            title: 'Authorization',
-            content: 'Authorization',
-        },
-        {
-            id: 3,
-            title: 'Body',
-            content: 'Body',
-        }
-    ]
+    const handleChangeTab=(element)=>{
+        setCurrentTab(element.id)
+    }
 
     return(
         <div>
-            <div>
+            <div className="container-head">
                 {
                     elements.map(element => 
-                        <div>
-                            <p>{element.title}</p>
+                        <div className="div-tabs" key={element.id}>
+                            <p className={currentTab === element.id ? 'tab tab-actibe' : 'tab'} onClick={()=>handleChangeTab(element)}>{element.title}</p>
                         </div>
                     )
                 }
             </div>
             <div>
-                
+                {
+                    elements.map(element => 
+                        <div key={element.id} className={currentTab === element.id ? '' : 'tab-close'}>
+                            {element.content}
+                        </div>
+                    )
+                }
             </div>
         </div>
     )
