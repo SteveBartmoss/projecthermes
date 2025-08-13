@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import './tabsRequest.css'
 
 export function TabsRequest({elements}){
 
     const [currentTab,setCurrentTab] = useState(1)
-
+    
     const handleChangeTab=(element)=>{
         setCurrentTab(element.id)
     }
