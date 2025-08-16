@@ -3,6 +3,10 @@
 Si necesitas una forma de probar una api y tienes configurada un ambiente de desarrollo con node.js 
 puedes clonar el repositorio  para tener una aplicacion para consumir apis mediante peticiones http
 
+### Importante
+
+Si clonas el repositorio ya sea porque quieres probar el proyecto o simplemente quieres ver como esta construido, deberias usar la rama deploy, ya que la rama master es la que tiene actualizaciones constantemente y que pueden no estar completas (deberia llamarse develop, pero no he hecho el cambio)
+
 ### Consideraciones
 
 Como el proyecto se levanta en su propio puerto (quizas es mucho para un cliente http) pero sobre todo 
