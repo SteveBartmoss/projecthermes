@@ -3,7 +3,7 @@ import './bodyConfig.css'
 
 export function BodyConfig(){
 
-    const [typeBody,setTypeBody] = useFrameContext()
+    const {typeBody,setTypeBody} = useFrameContext()
     
     return(
         <div>
