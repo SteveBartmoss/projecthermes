@@ -3,8 +3,8 @@ import './authConfig.css'
 
 export function AuthConfig(){
 
-    const [typeToken,setTypeToken] = useFrameContext()
-    const [token,setToken] = useFrameContext()
+    const {typeToken,setTypeToken} = useFrameContext()
+    const {token,setToken} = useFrameContext()
 
     return(
         <div>
