@@ -20,6 +20,7 @@ export const FrameContextProvider = ({children}) => {
     const [typeBody,setTypeBody] = useState('body')
     const [typeToken,setTypeToken] = useState('')
     const [token,setToken] = useState('')
+    const [params,setParams] = useState('')
 
     return(
         <FrameContext.Provider value={{url,setUrl,body,setBody,method,setMethod,typeBody,setTypeBody,typeToken,setTypeToken,token,setToken}}>
