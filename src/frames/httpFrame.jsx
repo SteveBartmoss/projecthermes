@@ -12,6 +12,7 @@ import { Params } from "../components/params/params";
 import { TabsRequest } from "../components/tabsRequest/tabsRequest";
 import { BodyConfig } from "../components/body/bodyConfig";
 import { AuthConfig } from "../components/authConfig/authConfig";
+import { useFrameContext } from "../context/frameContext";
 
 export function HttpFrame(){
 
@@ -21,7 +22,7 @@ export function HttpFrame(){
     const [typeBody,setTypeBody] = useState('body')
     const [objProps, setObjProps] = useState({})
     const [typeToken,setTypeToken] = useState('')
-    const [token,setToken] = useState('')
+    const {token,setToken} = useFrameContext()
     
     const methodElements = [
         {
