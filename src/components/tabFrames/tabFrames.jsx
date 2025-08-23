@@ -6,6 +6,7 @@ import './tabFrames.css'
 import { HttpFrame } from "../../frames/httpFrame"
 import { useDispatch, useSelector } from "react-redux"
 import { addTab, removeTab } from "../../store/tabSlice"
+import { FrameContextProvider } from "../../context/frameContext"
 
 export function TabFrames(){
 
@@ -59,7 +60,9 @@ export function TabFrames(){
                 {
                     listFrames.map(element =>
                         <div key={element.id} className={currentTab === element.id ? '' : 'tab-close'}>
-                            <HttpFrame />
+                            <FrameContextProvider>
+                                <HttpFrame />
+                            </FrameContextProvider>
                         </div>
                     )
                 }
