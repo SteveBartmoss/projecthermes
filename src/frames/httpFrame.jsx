@@ -112,10 +112,6 @@ export function HttpFrame(){
             </DivRow>
 
             <DivRow>
-                <TokenMenu title={'Authorization'} target={token} handleTarget={(event)=>setToken(event.target.value)} />
-            </DivRow>
-
-            <DivRow>
                 <TabsRequest elements={elementsRequest} />
             </DivRow>
             <DivRow>
