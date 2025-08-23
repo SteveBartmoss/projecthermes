@@ -23,7 +23,7 @@ export const FrameContextProvider = ({children}) => {
     const [params,setParams] = useState('')
 
     return(
-        <FrameContext.Provider value={{url,setUrl,body,setBody,method,setMethod,typeBody,setTypeBody,typeToken,setTypeToken,token,setToken}}>
+        <FrameContext.Provider value={{url,setUrl,body,setBody,method,setMethod,typeBody,setTypeBody,typeToken,setTypeToken,token,setToken,params,setParams}}>
             {children}
         </FrameContext.Provider>
     )
