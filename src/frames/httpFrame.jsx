@@ -10,6 +10,8 @@ import { ResponseField } from "../components/response/responseField";
 import { TokenMenu } from "../components/tokenMenu/tokenMenu";
 import { Params } from "../components/params/params";
 import { TabsRequest } from "../components/tabsRequest/tabsRequest";
+import { BodyConfig } from "../components/body/bodyConfig";
+import { AuthConfig } from "../components/authConfig/authConfig";
 
 export function HttpFrame(){
 
@@ -71,15 +73,12 @@ export function HttpFrame(){
         {
             id: 2,
             title: 'Authorization',
-            content: <div>
-                <SelectField elements={elementsToken} target={typeToken} handleChange={(event)=>setTypeToken(event.target.value)} />
-                <TextField textHolder={'token'} target={token} handleTarget={(event)=>setToken(event.target.value)}  />
-            </div>,
+            content: <AuthConfig />,
         },
         {
             id: 3,
             title: 'Body',
-            content: <h1>Body</h1>,
+            content: <BodyConfig />,
         }
     ]
 
