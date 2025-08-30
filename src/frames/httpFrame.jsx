@@ -13,11 +13,12 @@ import { TabsRequest } from "../components/tabsRequest/tabsRequest";
 import { BodyConfig } from "../components/body/bodyConfig";
 import { AuthConfig } from "../components/authConfig/authConfig";
 import { useFrameContext } from "../context/frameContext";
+import { BodyField } from "../components/bodyFiled/bodyField";
 
 export function HttpFrame(){
 
     const [url,setUrl] = useState('')
-    const [body,setBody] = useState('')
+    const {body} = useFrameContext()
     const [method, setMethod] = useState('GET')
     const [objProps, setObjProps] = useState({})
     const {token} = useFrameContext()
@@ -115,7 +116,7 @@ export function HttpFrame(){
             </DivRow>
             <DivRow>
                 <div className='div-body'>
-                    <LongTextField textHolder={'body'} target={body} handleTarget={(event)=>setBody(event.target.value)} />
+                    <BodyField />
                 </div>
                 <ResponseField objProps={objProps} />
             </DivRow>
