@@ -19,10 +19,8 @@ export function HttpFrame(){
     const [url,setUrl] = useState('')
     const [body,setBody] = useState('')
     const [method, setMethod] = useState('GET')
-    const [typeBody,setTypeBody] = useState('body')
     const [objProps, setObjProps] = useState({})
-    const [typeToken,setTypeToken] = useState('')
-    const {token,setToken} = useFrameContext()
+    const {token} = useFrameContext()
     
     const methodElements = [
         {
