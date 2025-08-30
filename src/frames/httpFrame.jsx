@@ -15,7 +15,7 @@ import { SelectMethod } from "../components/selectMethod/selectMethod";
 
 export function HttpFrame(){
 
-    const [url,setUrl] = useState('')
+    const {url,setUrl} = useFrameContext()
     const {body} = useFrameContext()
     const {method} = useFrameContext()
     const [objProps, setObjProps] = useState({})
