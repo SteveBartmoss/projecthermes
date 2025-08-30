@@ -12,12 +12,13 @@ import { BodyConfig } from "../components/body/bodyConfig";
 import { AuthConfig } from "../components/authConfig/authConfig";
 import { useFrameContext } from "../context/frameContext";
 import { BodyField } from "../components/bodyFiled/bodyField";
+import { SelectMethod } from "../components/selectMethod/selectMethod";
 
 export function HttpFrame(){
 
     const [url,setUrl] = useState('')
     const {body} = useFrameContext()
-    const [method, setMethod] = useState('GET')
+    const {method} = useFrameContext()
     const [objProps, setObjProps] = useState({})
     const {token} = useFrameContext()
     
@@ -81,7 +82,7 @@ export function HttpFrame(){
         <>
             <DivRow>
                 <div>
-                    <SelectField elements={methodElements} target={method} handleChange={(event)=>setMethod(event.target.value)} />
+                    <SelectMethod />
                 </div>
                 <DivGrow>
                     <TextField textHolder={'url'} target={url} handleTarget={(event)=>setUrl(event.target.value)} />
