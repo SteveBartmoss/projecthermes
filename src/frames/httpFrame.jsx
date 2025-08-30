@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { DivGrow, DivRow } from "../components/containers/containers";
 import { Client } from "../client/client";
-import { SelectField } from "../components/select/selectField";
 import { TextField } from "../components/textfield/textfield";
 import { Btn } from "../components/btn/btn";
 import './httpFrame.css'
@@ -21,29 +20,6 @@ export function HttpFrame(){
     const {method} = useFrameContext()
     const [objProps, setObjProps] = useState({})
     const {token} = useFrameContext()
-    
-    const methodElements = [
-        {
-            value: "GET",
-            title: "GET"
-        },
-        {
-            value: "POST",
-            title: "POST"
-        },
-        {
-            value: "PUT", 
-            title: "PUT"
-        },
-        {
-            value: "PATCH",
-            title: "PATCH"
-        },
-        {
-            value: "DELETE",
-            title: "DELETE"
-        }
-    ]
 
     const elementsRequest = [
         {
