@@ -5,9 +5,7 @@ import { SelectField } from "../components/select/selectField";
 import { TextField } from "../components/textfield/textfield";
 import { Btn } from "../components/btn/btn";
 import './httpFrame.css'
-import { LongTextField } from "../components/longTextField/longTextField";
 import { ResponseField } from "../components/response/responseField";
-import { TokenMenu } from "../components/tokenMenu/tokenMenu";
 import { Params } from "../components/params/params";
 import { TabsRequest } from "../components/tabsRequest/tabsRequest";
 import { BodyConfig } from "../components/body/bodyConfig";
@@ -44,24 +42,6 @@ export function HttpFrame(){
             value: "DELETE",
             title: "DELETE"
         }
-    ]
-
-    const bodyContent = [
-        {
-            value: "body",
-            title: "Body",
-        },
-        {
-            value: "formData",
-            title: "Form Data",
-        },
-    ]
-
-    const elementsToken = [
-        {
-            value: "Bearer Token",
-            title: "bearerToken",
-        },
     ]
 
     const elementsRequest = [
