@@ -12,8 +12,29 @@ export class Neofetch{
 
     } 
 
-    static async get(){
+    static #buildOptions(method,headers,body,options){
 
+        switch(method){
+            case "GET":
+            case "DELETE":
+                return {
+                    method,
+                    headers: {"Content-Type": "application/json",...headers},
+                    ...options
+                }
+            case "POST":
+            case "PUT":
+            case "PATCH":
+                return{
+                    method,
+                    headers: {"Content-Type": "application/json",...headers},
+                    body: body ? JSON.stringify(body) : undefined,
+                    ...options
+                }
+        }
+    }
+
+    static async get(){
     }
 
     static async post(){
