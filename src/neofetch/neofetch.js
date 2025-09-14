@@ -34,6 +34,15 @@ export class Neofetch{
         }
     }
 
+    static async #buildRequest(method,url,{body,params,headers,...options}){
+        
+        const swapurl = this.#buildUrl(url,params)
+
+        const response = await fetch(swapurl,this.#buildOptions(method,headers,body,options))
+
+        return response
+    }
+
     static async get(){
     }
 
