@@ -12,6 +12,7 @@ import { AuthConfig } from "../components/authConfig/authConfig";
 import { useFrameContext } from "../context/frameContext";
 import { BodyField } from "../components/bodyFiled/bodyField";
 import { SelectMethod } from "../components/selectMethod/selectMethod";
+import { Neofetch } from "../neofetch/neofetch";
 
 export function HttpFrame(){
 
@@ -20,6 +21,7 @@ export function HttpFrame(){
     const {method} = useFrameContext()
     const [objProps, setObjProps] = useState({})
     const {token} = useFrameContext()
+    const {params} = useFrameContext()
 
     const elementsRequest = [
         {
@@ -40,7 +42,46 @@ export function HttpFrame(){
     ]
 
     const handleSend = async() => {
+        
         try{
+
+            let options = {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+
+                },
+                params: !params ? []:params,
+                body: body,
+            }
+
+            let response = null
+
+            switch(method){
+
+                case "GET":
+                    response = Neofetch.get(url,options) 
+                    break
+                
+                case "POST":
+                    response = Neofetch.post(url,options)
+                    break
+                
+                case "PUT":
+                    response = Neofetch.put(url,options)
+                    break
+
+                case "PATCH":
+                    response = Neofetch.patch(url,options)
+                    break
+
+                case "DELETE":
+                    response = Neofetch.delete(url,options)
+                    break
+                
+            }
+
+            console.log(response)
+            
             const {data,duration,size,status} = await Client.sendPeticion(method,body,url,token)
             setObjProps({
                 objResponse: data,
