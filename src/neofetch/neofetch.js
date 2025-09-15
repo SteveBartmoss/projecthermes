@@ -43,22 +43,33 @@ export class Neofetch{
         return response
     }
 
-    static async get(){
-    }
+    static async get(url,options={}){
 
-    static async post(){
-
-    }
-
-    static async put(){
+        return this.#buildRequest("GET",url,options)
 
     }
 
-    static async patch(){
+    static async post(url,options={}){
+
+        return this.#buildRequest("POST",url,options)
 
     }
 
-    static async delete(){
+    static async put(url,options){
+
+        return this.#buildRequest("PUT",url,options)
+
+    }
+
+    static async patch(url,options){
+
+        return this.#buildRequest("PATCH",url,options)
+
+    }
+
+    static async delete(url,options){
+
+        return this.#buildRequest("DELETE",url,options)
         
     }
 
