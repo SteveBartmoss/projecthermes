@@ -2,11 +2,11 @@
 
 export class Neofetch{
 
-    static #buildUrl(url,paramas=[]){
+    static #buildUrl(url,params=[]){
 
         const searchParams = new URLSearchParams()
 
-        params.foreach(({key,value}) => searchParams.append(key,value))
+        params.forEach(({key,value}) => searchParams.append(key,value))
 
         return `${url}?${searchParams.toString()}` 
 
@@ -70,7 +70,7 @@ export class Neofetch{
     static async delete(url,options){
 
         return this.#buildRequest("DELETE",url,options)
-        
+
     }
 
 }
